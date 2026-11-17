@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: hostel-maintenance
+    runtime: node
+    rootDir: hostel-maintenance
+    buildCommand: npm install
+    startCommand: npm start
+    plan: starter
+    healthCheckPath: /
+    disk:
+      name: hostel-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_FILE
+        value: /var/data/hostel.db
+      - key: UPLOAD_DIR
+        value: /var/data/uploads
+      - key: SEED_DEMO_DATA
+        value: "false"
+      - key: ADMIN_EMAIL
+        value: admin@hostel.test
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: SESSION_SECRET
+        generateValue: true
