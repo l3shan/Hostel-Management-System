@@ -4,7 +4,7 @@
   "description": "Hostel Maintenance Management System: web app for maintenance requests, assignment and progress tracking",
   "main": "server.js",
   "scripts": { "start": "node server.js", "test": "node test/api.test.js" },
-  "engines": { "node": ">=18" },
+  "engines": { "node": "22.x" },
   "dependencies": { "better-sqlite3": "^11.0.0", "express": "^4.19.2" },
   "license": "MIT"
 }
